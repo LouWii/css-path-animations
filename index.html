@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>CSS Path Animations</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <div class="main container">
+            <div class="sidebar">
+                <div class="btn-group-vertical">
+                    <button type="button" class="btn btn-secondary" data-target="square">Square</button>
+                    <button type="button" class="btn btn-secondary" data-target="circle">Circle</button>
+                    <button type="button" class="btn btn-secondary" data-target="win10">Win10</button>
+                </div>
+            </div>
+            <div class="content">
+                <h1>CSS Path Animations</h1>
+                <div data-name="square" class="animation-container animation-square">
+                    <svg class="svg-path" width="200" height="200"  xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 10 H 180 V 180 H 10 Z"></path>
+                    </svg>
+                    <div class="animation object-round"></div>
+                </div>
+                <div data-name="circle" class="animation-container animation-circle">
+                    <svg class="svg-path" width="200" height="200"  xmlns="http://www.w3.org/2000/svg">
+                        <!-- <ellipse ry="50" rx="50" cy="50" cx="50"/> -->
+                        <path d="M54 54 a 50 50 0 1 0 0.0001 0"></path>
+                    </svg>
+                    <div class="animation object-round"></div>
+                </div>
+                <div data-name="win10" class="animation-container animation-win10">
+                    <svg class="svg-path" width="200" height="200"  xmlns="http://www.w3.org/2000/svg">
+                        <!-- <ellipse ry="50" rx="50" cy="50" cx="50"/> -->
+                        <path d="M54 54 a 50 50 0 1 0 0.0001 0"></path>
+                    </svg>
+                    <div class="animation object-win10"></div>
+                    <div class="animation a2 object-win10"></div>
+                    <div class="animation a3 object-win10"></div>
+                    <div class="animation a4 object-win10"></div>
+                </div>
+            </div>
+        </div>
+        <script type="application/javascript" src="script.js"></script>
+    </body>
+</html>

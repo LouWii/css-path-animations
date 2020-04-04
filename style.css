@@ -1,0 +1,112 @@
+body {
+    background: #333;
+    color: #fff;
+    margin: 2rem 0;
+}
+
+.object-round {
+    width: 40px;
+    height: 40px;
+    background: hotpink;
+    border-radius: 50%;
+}
+
+.object-win10 {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.animation-container {
+    margin: 1rem 0;
+    position: relative;
+}
+
+.svg-path {
+    fill: none;
+    left: 0;
+    position: absolute;
+    stroke: gray;
+    stroke-width: 4;
+    top: 0;
+}
+
+.animation-square .animation {
+    /* Square shape */
+    offset-path: path('M10 10 H 180 V 180 H 10 Z');
+
+    /* Use "move" animation for 3s */
+    animation: move 3s linear infinite;
+}
+
+.animation-circle .animation {
+    /* Circle shape - Apparently cannot draw a full circle with a path... 
+        see https://stackoverflow.com/questions/5737975/circle-drawing-with-svgs-arc-path 
+        see http://jsfiddle.net/DFhUF/1381/ 
+        So we're tricking it by drawing an almost full circle and closing it with Z */
+    offset-path: path('M54 54 a 50 50 0 1 0 0.0001 0 Z');
+
+    animation: move-reverse 3s cubic-bezier(0.86, 0, 0.07, 1) infinite;
+}
+
+.animation-win10 .animation {
+    offset-path: path('M54 54 a 50 50 0 1 0 0.0001 0 Z');
+    animation: move-pause 2s ease-in-out infinite;
+
+    position: absolute;
+}
+
+.animation-win10 .a2 {
+    animation-delay: 100ms;
+}
+
+.animation-win10 .a3 {
+    animation-delay: 200ms;
+}
+
+.animation-win10 .a4 {
+    animation-delay: 300ms;
+}
+
+@keyframes move {
+    0% { 
+        offset-distance: 0%; /* start at 0% of the path */
+    }
+    100% { 
+        offset-distance: 100%; /* finish at 100% of the path */
+    }
+}
+
+@keyframes move-reverse {
+    0% { 
+        offset-distance: 100%; /* start at 0% of the path */
+    }
+    100% { 
+        offset-distance: 0%; /* finish at 100% of the path */
+    }
+}
+
+@keyframes move-pause {
+    0% { 
+        offset-distance: 0%;
+    }
+    20% {
+        offset-distance: 0%;
+    }
+    100% { 
+        offset-distance: 100%;
+    }
+}
+
+.main {
+    display: flex;
+}
+.main .sidebar {
+    padding-top: 4rem;
+    width: 250px;
+}
+
+.main content {
+    flex-grow: 1;
+}

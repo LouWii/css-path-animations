@@ -53,7 +53,6 @@ body {
 .animation-win10 .animation {
     offset-path: path('M54 54 a 50 50 0 1 0 0.0001 0 Z');
     animation: move-pause 2s ease-in-out infinite;
-
     position: absolute;
 }
 
@@ -67,6 +66,36 @@ body {
 
 .animation-win10 .a4 {
     animation-delay: 300ms;
+}
+
+.animation-lines .animation {
+    offset-path: path('M40 10 h 50');
+    animation: move-and-back .6s linear infinite;
+}
+
+.animation-lines .a2 {
+    offset-path: path('M38 10 h 54');
+    animation-duration: .7s;
+}
+
+.animation-lines .a3 {
+    offset-path: path('M36 10 h 58');
+    animation-duration: .8s;
+}
+
+.animation-lines .a4 {
+    offset-path: path('M34 10 h 62');
+    animation-duration: .9s;
+}
+
+.animation-lines .a5 {
+    offset-path: path('M32 10 h 66');
+    animation-duration: 1s;
+}
+
+.animation-lines .a6 {
+    offset-path: path('M30 10 h 70');
+    animation-duration: 1.1s;
 }
 
 @keyframes move {
@@ -96,6 +125,18 @@ body {
     }
     100% { 
         offset-distance: 100%;
+    }
+}
+
+@keyframes move-and-back {
+    0% { 
+        offset-distance: 0%;
+    }
+    50% { 
+        offset-distance: 100%;
+    }
+    100% {
+        offset-distance: 0%;
     }
 }
 
